@@ -1,0 +1,23 @@
+<!-- <button (click)="increment()">Increment</button>
+
+<div>Current Count: {{ count$ | async }}</div>
+
+<button (click)="decrement()">Decrement</button>
+
+<button (click)="reset()">Reset Counter</button> -->
+
+<div class="right" *ngIf="tutorials">
+    <h3>Tutorials Reducer</h3>
+    <div>
+        <input type="text" placeholder="Name" [(ngModel)]="name">
+        <input type="text" placeholder="URL" [(ngModel)]="url">
+        <button (click)="addLink()">Add Link</button>
+    </div>
+    <!-- <button (click)="removeLink()">Remove Link</button> -->
+    <ul>
+        <li *ngFor="let tutorial of tutorials | async; let i = index">
+            <a [href]="tutorial.url" target="_blank">{{tutorial.name}}</a>
+            <button (click)="removeLink(i)">Remove</button>
+        </li>
+    </ul>
+</div>
